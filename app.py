@@ -8,86 +8,58 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
-.sa-title { font-size: 34px; font-weight: 800; color: #4f46e5; margin: 0 0 2px; letter-spacing: -0.5px; }
-.sa-sub { font-size: 13px; color: #6b7280; margin: 0 0 18px; }
+header[data-testid="stHeader"] { display: none !important; }
+#MainMenu { display: none !important; }
+footer { display: none !important; }
+.block-container { padding-top: 2.5rem !important; padding-bottom: 2rem !important; }
+div[data-testid="column"] { padding: 0 4px !important; }
 
-.search-top-box {
-    background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
-    border: 2px solid #c7d2fe;
-    border-bottom: none;
-    border-radius: 16px 16px 0 0;
-    padding: 14px 18px 10px 18px;
-    max-width: 500px;
-}
-.search-top { display: flex; align-items: center; gap: 8px; }
-.search-dot { width: 8px; height: 8px; border-radius: 50%; background: #6366f1; flex-shrink: 0; }
-.search-label { font-size: 12px; font-weight: 700; color: #6366f1; letter-spacing: 1.5px; text-transform: uppercase; }
+.sa-title { font-size: 28px; font-weight: 800; color: #111827; margin: 0 0 2px; letter-spacing: -0.3px; line-height: 1.4; }
+.sa-title span { color: #4f46e5; }
+.sa-sub { font-size: 14px; color: #6b7280; margin: 0 0 20px; }
 
-.search-bottom-box {
-    background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
-    border: 2px solid #c7d2fe;
-    border-top: none;
-    border-radius: 0 0 16px 16px;
-    padding: 6px 18px 14px 18px;
-    max-width: 500px;
-    margin-bottom: 20px;
-}
-.search-hint { font-size: 11px; color: #9ca3af; margin: 0 0 10px; }
+.sa-hint { font-size: 11px; color: #9ca3af; margin: 2px 0 8px; }
 .examples-label { font-size: 10px; font-weight: 700; color: #9ca3af; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
 .search-examples { display: flex; gap: 6px; flex-wrap: wrap; }
-.search-chip { font-size: 11px; background: white; color: #6366f1; border: 1.5px solid #c7d2fe; border-radius: 20px; padding: 3px 10px; font-weight: 600; }
+.search-chip { font-size: 11px; background: #f0f4ff; color: #6366f1; border: 1.5px solid #c7d2fe; border-radius: 20px; padding: 3px 10px; font-weight: 600; }
 
-div[data-testid="stTextInput"] {
-    max-width: 500px !important;
+.sa-company { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 6px; }
+.sa-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.sa-tag { font-size: 11px; background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; border-radius: 20px; padding: 3px 10px; }
+
+.sa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
 }
-div[data-testid="stTextInput"] input {
-    border-radius: 0 !important;
-    border: 2px solid #c7d2fe !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    background: white !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    padding: 12px 16px !important;
-    color: #111827 !important;
-    width: 100% !important;
-}
-div[data-testid="stTextInput"] input:focus {
-    border-color: #6366f1 !important;
-    box-shadow: none !important;
-    outline: none !important;
+@media (max-width: 768px) {
+    .sa-grid { grid-template-columns: 1fr !important; }
 }
 
-.sa-company { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 5px; }
-.sa-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
-.sa-tag { font-size: 11px; background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; border-radius: 20px; padding: 2px 9px; }
+.sa-card { border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; }
+.card-blue   { background: #eff6ff; border: 1.5px solid #bfdbfe; }
+.card-purple { background: #f5f3ff; border: 1.5px solid #ddd6fe; }
+.card-green  { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+.card-amber  { background: #fffbeb; border: 1.5px solid #fde68a; }
 
-.sa-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-
-.sa-card { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; }
-.card-blue   { background: #eff6ff; border: 1px solid #bfdbfe; }
-.card-purple { background: #f5f3ff; border: 1px solid #ddd6fe; }
-.card-green  { background: #f0fdf4; border: 1px solid #bbf7d0; }
-.card-amber  { background: #fffbeb; border: 1px solid #fde68a; }
-
-.sa-card-head { display: flex; align-items: center; gap: 7px; padding-bottom: 8px; margin-bottom: 2px; }
-.sa-card-icon { width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.sa-card-head { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; margin-bottom: 2px; }
+.sa-card-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
 .icon-blue   { background: #dbeafe; }
 .icon-purple { background: #ede9fe; }
 .icon-green  { background: #dcfce7; }
 .icon-amber  { background: #fef3c7; }
 
-.sa-card-title-blue   { font-size: 13px; font-weight: 700; color: #1d4ed8; }
-.sa-card-title-purple { font-size: 13px; font-weight: 700; color: #6d28d9; }
-.sa-card-title-green  { font-size: 13px; font-weight: 700; color: #15803d; }
-.sa-card-title-amber  { font-size: 13px; font-weight: 700; color: #b45309; }
+.sa-card-title-blue   { font-size: 14px; font-weight: 700; color: #1d4ed8; }
+.sa-card-title-purple { font-size: 14px; font-weight: 700; color: #6d28d9; }
+.sa-card-title-green  { font-size: 14px; font-weight: 700; color: #15803d; }
+.sa-card-title-amber  { font-size: 14px; font-weight: 700; color: #b45309; }
 
 .sa-divider-blue   { border: none; border-top: 1.5px solid #bfdbfe; margin: 0 0 4px; }
 .sa-divider-purple { border: none; border-top: 1.5px solid #ddd6fe; margin: 0 0 4px; }
 .sa-divider-green  { border: none; border-top: 1.5px solid #bbf7d0; margin: 0 0 4px; }
 .sa-divider-amber  { border: none; border-top: 1.5px solid #fde68a; margin: 0 0 4px; }
 
-.sa-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 5px 0; gap: 6px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.sa-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 6px 0; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .sa-row:last-child { border-bottom: none; padding-bottom: 0; }
 .sa-row-left { flex: 1; min-width: 0; }
 .sa-row-right { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
@@ -95,19 +67,40 @@ div[data-testid="stTextInput"] input:focus {
 .sa-row-hint  { font-size: 10px; color: #9ca3af; margin-top: 1px; line-height: 1.2; }
 .sa-val { font-size: 13px; font-weight: 700; color: #111827; white-space: nowrap; }
 
-.badge { font-size: 10px; padding: 1px 6px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+.badge { font-size: 10px; padding: 1px 7px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
 .badge-good { background: #dcfce7; color: #15803d; }
 .badge-warn { background: #fef3c7; color: #b45309; }
 .badge-bad  { background: #fee2e2; color: #dc2626; }
 
+div[data-testid="stTextInput"] input {
+    border-radius: 10px !important;
+    border: 2px solid #e0e7ff !important;
+    background: #f8f7ff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    padding: 11px 16px !important;
+    color: #111827 !important;
+    height: 46px !important;
+}
+div[data-testid="stTextInput"] input:focus {
+    border-color: #6366f1 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+}
+div[data-testid="stTextInput"] input::placeholder {
+    color: #a5b4fc !important;
+    font-weight: 400 !important;
+}
 div.stButton > button {
     background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
     color: white !important;
     border: none !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
-    font-size: 14px !important;
-    padding: 10px 24px !important;
+    font-size: 15px !important;
+    height: 46px !important;
+    padding: 0 24px !important;
+    width: 100% !important;
 }
 div.stButton > button:hover {
     background: linear-gradient(135deg, #4338ca, #6d28d9) !important;
@@ -175,31 +168,26 @@ def empty_card(color, icon, title, labels):
 
 
 # ── Header
-st.markdown('<p class="sa-title">📊 Stock Analyzer</p>', unsafe_allow_html=True)
-st.markdown('<p class="sa-sub">Real-time fundamentals for any NSE or BSE listed stock</p>', unsafe_allow_html=True)
+st.markdown('''
+<p class="sa-title">📊 <span>Stock</span> Analyzer</p>
+<p class="sa-sub">Fundamental metrics for any NSE or BSE listed stock</p>
+''', unsafe_allow_html=True)
 
-# ── Top of search box
-st.markdown("""
-<div class="search-top-box">
-    <div class="search-top">
-        <div class="search-dot"></div>
-        <span class="search-label">Enter Stock Ticker</span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# ── Input sits seamlessly between top and bottom box
-col_in, col_btn, col_gap = st.columns([2.5, 0.8, 2])
+# ── Input + button
+col_in, col_btn, col_gap = st.columns([3, 0.9, 2])
 with col_in:
-    ticker_input = st.text_input("", placeholder="e.g. INFY.NS or RELIANCE.NS", label_visibility="collapsed")
+    ticker_input = st.text_input(
+        "",
+        placeholder="Enter ticker — e.g. INFY.NS or RELIANCE.NS",
+        label_visibility="collapsed"
+    )
 with col_btn:
-    st.markdown("<br>", unsafe_allow_html=True)
-    analyze = st.button("Analyze →", use_container_width=True)
+    analyze = st.button("🔍 Analyze", use_container_width=True)
 
-# ── Bottom of search box
+# ── Hint + examples
 st.markdown("""
-<div class="search-bottom-box">
-    <p class="search-hint">NSE: add .NS &nbsp;·&nbsp; BSE: add .BO</p>
+<div style="max-width:660px; margin-top:-8px;">
+    <p class="sa-hint">NSE: add .NS (e.g. HDFCBANK.NS) &nbsp;·&nbsp; BSE: add .BO (e.g. 500180.BO)</p>
     <div class="examples-label">Try these</div>
     <div class="search-examples">
         <span class="search-chip">INFY.NS</span>
@@ -210,6 +198,7 @@ st.markdown("""
         <span class="search-chip">500325.BO</span>
     </div>
 </div>
+<br>
 """, unsafe_allow_html=True)
 
 ticker = ticker_input.upper().strip()
