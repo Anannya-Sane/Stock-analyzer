@@ -1,5 +1,2 @@
-transformers
-yfinance
 streamlit
-torch
-newsapi-python
+yfinance
